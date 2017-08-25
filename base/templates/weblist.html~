@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>技术分享-晓东博客</title>
+<meta name="keywords" content="个人博客" />
+<meta name="description" content="" />
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/index.css" rel="stylesheet">
+<link href="/static/css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+   <nav class="topnav" id="topnav">
+  <a href="index.html"><span>首页</span><span class="en">Home</span></a>
+  <a href="about.html"><span>关于我</span><span class="en">About</span></a></a>
+  <a href="saylist.html"><span>心情随笔</span><span class="en">Essay</span></a>
+  <a href="diarylist.html"><span>时光荏苒</span><span class="en">Time</span></a>
+  <a href="weblist.html"><span>技术分享</span><span class="en">Share</span></a>
+  <a href="#"><span>待定</span><span class="en">other</span></a>
+  <a href="gustbook.html"><span>留言板</span><span class="en">Gustbook</span></a>
+  </nav>
+</header>
+<article class="blogs">
+<h1 class="t_nav"><span>记录自己每一步的脚印，同时把这些"坑"都分享给大家！</span><a href="/" class="n1">网站首页</a><a href="/" class="n2">技术分享</a></h1>
+<div class="bloglist left">
+   <!--article1-->
+    <div class="wz">
+    <h3>标题1</h3>
+    <p class="dateview"><span>2013-11-04</span><span>作者：晓东</span><span>分类：[<a href="#">类型1</a>]</span></p>
+    <figure><img src="images/001.jpg"></figure>
+    <ul>
+      <p>内容1...</p>
+      <a title="阅读全文" href="/" target="_blank" class="readmore">阅读全文>></a>
+    </ul>
+    <div class="clear"></div>
+    </div>
+   <!--end-->
+    <!--article2-->
+    <div class="wz">
+    <h3>标题2</h3>
+    <p class="dateview"><span>2013-11-04</span><span>作者：晓东</span><span>分类：[<a href="#">类型2</a>]</span></p>
+    <figure><img src="images/001.jpg"></figure>
+    <ul>
+      <p>内容2...</p>
+      <a title="阅读全文" href="/" target="_blank" class="readmore">阅读全文>></a>
+    </ul>
+    <div class="clear"></div>
+    </div>
+   <!--end-->
+    <!--article3-->
+    <div class="wz">
+    <h3>标题3</h3>
+    <p class="dateview"><span>2013-11-04</span><span>作者：晓东</span><span>分类：[<a href="#">类型3</a>]</span></p>
+    <figure><img src="images/001.jpg"></figure>
+    <ul>
+      <p>内容3...</p>
+      <a title="阅读全文" href="/" target="_blank" class="readmore">阅读全文>></a>
+    </ul>
+    <div class="clear"></div>
+    </div>
+   <!--end-->
+   <!--页码-->
+    <div class="page">
+      <a title="Total record"><b>20</b></a><b>1</b>
+      <a href="/news/s/index_2.html">2</a>
+      <a href="/news/s/index_2.html">&gt;</a>
+      <a href="/news/s/index_2.html">&gt;&gt;</a></div>
+  </div>
+   <!--end-->
+</div>
+<!--right-->
+<aside class="right">
+ <div class="rnav">
+     <h2>导航</h2>
+      <ul>
+       <li class="rnav1"><a href="#">其他</a></li>
+       <li class="rnav2"><a href="#">后端技术</a></li>
+       <li class="rnav3"><a href="#">游戏开发</a></li>
+       <li class="rnav4"><a href="#">推荐工具</a></li>
+     </ul>      
+    </div>
+    
+<div class="news">
+    <h3>
+      <p>最新<span>文章</span></p>
+    </h3>
+    <ul class="rank">
+      <li><a href="/" title="标题1" target="_blank">标题1</a></li>
+      <li><a href="/" title="标题2" target="_blank">标题2</a></li>
+      <li><a href="/" title="标题3" target="_blank">标题3</a></li>
+      <li><a href="/" title="标题4" target="_blank">标题4</a></li>
+      <li><a href="/" title="标题5" target="_blank">标题5</a></li>
+    </ul>
+    <h3 class="ph">
+      <p>点击<span>排行</span></p>
+    </h3>
+    <ul class="paih">
+      <li><a href="/" title="标题1" target="_blank">标题1</a></li>
+      <li><a href="/" title="标题2" target="_blank">标题2</a></li>
+      <li><a href="/" title="标题3" target="_blank">标题3</a></li>
+      <li><a href="/" title="标题4" target="_blank">标题4</a></li>
+      <li><a href="/" title="标题5" target="_blank">标题5</a></li>
+    </ul>
+       
+    </div> 
+</aside>
+</article>
+<footer>
+ <p><span>The backend designer is：<a href="www.duanliang920.com" target="_blank">晓东</a></span><span></span><span><a href="/">网站统计</a></span></p>
+</footer>
+<script src="/static/js/nav.js"></script>
+  <!-- Baidu Button BEGIN -->
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script> 
+    <script type="text/javascript" id="bdshell_js"></script> 
+    <script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script> 
+    <!-- Baidu Button END -->   
+</body>
+</html>

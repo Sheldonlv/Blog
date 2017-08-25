@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title>编辑文章</title> 
+    <meta charset="UTF-8">
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js" type="text/javascript"></script> 
+
+    <script src="https://cdn.ckeditor.com/4.6.0-441b33b/full-all/ckeditor/ckeditor.js"></script>     
+
+    <style type="text/css">
+    /* Minimal styling to center the editor in this sample */
+    body {
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    p{
+    text-align:left; 
+    }
+    .p2{
+    text-align:right; 
+    }
+    .container {
+        margin: 0 auto;
+        width: 850px;
+    }
+    </style>
+
+
+<script>    
+/*
+* 1. 每次进入页面前    都从后台取最新的数据到前台   【在index方法里】
+* 2. 缓存数据判断   缓存为空 则将后台最新数据赋值    2 本地缓存  localStorage 自动保存
+* 3. 缓存数据赋值给 texture值
+* 4. 遇到 texture值变化，则自动保存
+*/
+
+$(document).ready(function () {  
+    var editor=initeditor();
+    var  initcontent= window.sessionStorage.getItem("comment_top");     
+    // 初始化页面赋值
+    initdata(editor,initcontent);
+    // 触发自动保存  自动保存功能
+    editor.on('change', function(evt) {  
+        window.sessionStorage.setItem("comment_top", evt.editor.getData()); 
+    });
+});
+
+function initeditor(){
+      var editor=  CKEDITOR.replace( 'editor1' , {
+          toolbar: [
+                    { name: 'clipboard', items: [ 'Undo', 'Redo' ] },
+                    { name: 'styles', items: [ 'Format', 'Font', 'FontSize' ] },
+                    { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat', 'CopyFormatting' ] },
+                    { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+                    { name: 'align', items: [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+                    { name: 'links', items: [ 'Link', 'Unlink' ] },
+                    { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote' ] },
+                    { name: 'insert', items: [ 'Image', 'Table' ] },
+                    { name: 'tools', items: [ 'Maximize' ] },
+                    { name: 'editing', items: [ 'Scayt' ] }
+                ],
+
+        weith:500,
+        height: 600 ,  //外面长方形 高多少
+        contentsCss: [ 'https://cdn.ckeditor.com/4.6.0-441b33b/full-all/ckeditor/contents.css', 'mystyles.css' ] ,   //有无里面的方格          
+        allowedContent : true ,
+        disallowedContent: 'img{width,height,float}'   ,                  
+        extraAllowedContent: 'img[width,height,align]' ,                  
+        extraPlugins: 'tableresize,uploadimage,uploadfile' , 
+          bodyClass: 'document-editor' ,               
+        format_tags: 'p;h1;h2;h3;pre' ,               
+        removeDialogTabs: 'image:advanced;link:advanced'  
+      });
+      return editor;
+};
+
+function initdata(editor,initcontent){  
+  
+};
+//手动保存页面 
+ function ManualSave(){    
+           
+};   
+</script>
+</head>
+<body>
+    <div class="container">   
+          <form method="post">          
+            {% csrf_token %}
+            <p>标题:<input type="text" name="title"/>
+            <p>img:<input type="text" name="img"/>
+            <!--<p>类型:<input type="text" name="type"/>-->
+            <!--<p>推荐:<input type="text" name="reco"/>-->
+            <p>文章类型：<select name='type'>
+               <option value='日记'>日记</option>
+               <option value='后端技术'>后端技术</option>
+               <option value='游戏开发'>游戏开发</option>
+               <option value='其他'>其他</option>
+            </select>
+               是否推荐：<select name='reco'>
+               <option value='yes'>是</option>
+               <option value='no'>否</option>
+            </select><br>
+            <p>作者:<input type="text" name="writer"/>
+            <p>摘要:<input type="text" name="abstract"/>
+            <textarea name="content" id="editor1">{{content}}</textarea>     
+            <p class='p2'>密码:<input type="text" name="ps"/><input type="submit" value = "ok"/>
+          </form> 
+    </div>
+</body>
+</html>

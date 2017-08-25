@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>心情随笔-晓东博客</title>
+<meta name="keywords" content="个人博客" />
+<meta name="description" content="" />
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/index.css" rel="stylesheet">
+<link href="/static/css/ty.css" rel="stylesheet">
+<link href="/static/css/mood.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+   <nav class="topnav" id="topnav">
+   <a href="/"><span>首页</span><span class="en">Home</span></a>
+  <a href="/about"><span>关于我</span><span class="en">About</span></a></a>
+  <a href="/essay?page=1"><span>心情随笔</span><span class="en">Essay</span></a>
+  <a href="/time?type=All&page=1"><span>时光荏苒</span><span class="en">Time</span></a>
+  <!--<a href="/share"><span>技术分享</span><span class="en">Share</span></a>-->
+  <a href="#"><span>待定</span><span class="en">other</span></a>
+  <a href="/gustbook.html"><span>留言板</span><span class="en">Gustbook</span></a>
+  </nav>
+</header>
+<div class="moodlist">
+  <h1 class="t_nav"><span>生活中的碎言碎语，你又是否想听呢！</span><a href="/" class="n1">网站首页</a><a href="#" class="n2">心情随笔</a></h1>
+  <div class="bloglist">
+
+    <!--diary-->
+    {% for data in datas %}
+    <ul class="arrow_box">
+         <div class="sy">
+            <p>
+               <!--<img src="{{ data.img }}"> -->
+               {% autoescape off %}
+                   {{ data.img }}
+                   {{ data.content }}
+               {% endautoescape %}
+           </p>
+        </div>
+      <span class="dateview">{{ data.pub_time|date:"Y-m-d" }}</span>
+    </ul>
+    {% endfor %}
+    
+    <!--页码-->
+    <div class="page">
+
+      {% autoescape off %}
+          {% for data in page_data %}
+                  {{data}}
+                {% endfor %}
+      {% endautoescape %}
+
+    </div>
+  </div>
+   <!--end-->
+  </div>
+</div>
+<footer>
+ <p><span>The backend designer is：<a href="www.duanliang920.com" target="_blank">晓东</a></span><span></span><span><a href="/">网站统计</a></span></p>
+</footer>
+<script src="/static/js/nav.js"></script>
+</body>
+</html>

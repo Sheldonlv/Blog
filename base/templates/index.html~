@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>晓东--个人博客</title>
+<meta name="keywords" content="个人博客模板" />
+<meta name="description" content="优雅、稳重、大气、低调" />
+<link href="/static/css/index.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="../static/js/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+  <nav class="topnav" id="topnav">
+      <a href="/"><span>首页</span><span class="en">Home</span></a>
+      <a href="/about"><span>关于我</span><span class="en">About</span></a></a>
+      <a href="/essay?page=1"><span>心情随笔</span><span class="en">Essay</span></a>
+      <a href="/time?type=All&page=1"><span>时光荏苒</span><span class="en">Time</span></a>
+      <!--<a href="/share"><span>技术分享</span><span class="en">Share</span></a>-->
+      <a href="#"><span>待定</span><span class="en">other</span></a>
+      <a href="/gustbook.html"><span>留言板</span><span class="en">Gustbook</span></a>
+  </nav>
+</header>
+<!--end header-->
+<div class="banner">
+  <section class="box">
+    <ul class="texts">
+      <p class="p1">咖啡就是人生,</p>
+      <p class="p2">苦与甜都包含在其中。</p>
+      <p class="p3">By:晓东</p>
+    </ul>
+  </section>
+</div>
+<!--end banner-->
+<article>
+  <h2 class="title_tj">
+    <p>博主<span>推荐</span></p>
+  </h2>
+  <div class="bloglist left">
+   <!--article_1-->
+   {% for data in datas %}
+    <div class="wz">
+    <h3>{{ data.title }}</h3>
+    <p class="dateview"><span>{{ data.pub_time|date:"Y-m-d" }}</span><span>作者：{{ data.writer }}</span><span>分类[<a href="#">{{ data.doc_type }}</a>]</span></p>
+    <figure><a href="#"><img src="{{ data.img }}"></a></figure>
+    <ul>
+      <p>{{ data.content }}</p>
+      <a title="阅读全文" href="/article?id={{data.Num}}" target="_blank" class="readmore">阅读全文>></a>
+    </ul>
+    <div class="clear"></div>
+    </div>
+   {% endfor %}
+   <!--end-->
+  </div>
+  <!--right-->
+  <aside class="right"> 
+    <div class="my">
+     <h2>关于<span>博主</span></h2>
+     <a href="about.html"><img src="/static/images/blog.jpg" width="200" height="200" alt="博主"></a>
+       <ul>
+        <li>博主：少年</li>
+        <li>ְ职业：一枚苦逼大学生</li>
+        <li>简介：为自己兴趣与梦想而不断奋斗的死宅.</li>
+        <li></li>   
+       </ul>
+    </div>
+    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享至人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+    <div class="news">
+
+<!--点击排行-->
+
+    <h3 class="ph">
+      <p>点击<span>排行</span></p>
+    </h3>
+    <ul class="paih">
+      {% for data in max_para %}
+      <li><a href="/article?id={{data.Num}}" title="{{data.title}}">{{data.title}}</a></li>
+      {% endfor %}
+    </ul>
+
+<!--用户关注-->
+
+    <h3>
+      <p>最新<span>文章</span></p>
+    </h3>
+    <ul class="rank">
+      {% for data in new_para %}
+      <li><a href="/article?id={{data.Num}}" title="{{data.title}}">{{data.title}}</a></li>
+      {% endfor %}
+    </ul>
+
+<!--友情链接-->
+
+    <h3 class="links">
+      <p>友情<span>链接</span></p>
+    </h3>
+    <ul class="website">
+      <li><a href="http://zdnfbbs.cn">个人博客</a></li>
+      <li><a href="#">计协论坛</a></li>
+    </ul> 
+    </div> 
+</article>
+<footer>
+  <p><span>The backend designer is：<a href="www.duanliang920.com" target="_blank">晓东</a></span><span> </span><span><a href="/"></a></span></p>
+</footer>
+<script src="/static/js/nav.js"></script>
+
+<!--share-->
+
+
+</body>
+</html>

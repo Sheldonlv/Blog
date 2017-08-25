@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>心语-晓东博客</title>
+<meta name="keywords" content="个人博客" />
+<meta name="description" content="" />
+<link href="/static/css/index.css" rel="stylesheet">
+<link href="/static/css/new.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+   <nav class="topnav" id="topnav">
+  <a href="/"><span>首页</span><span class="en">Home</span></a>
+  <a href="/about.html"><span>关于我</span><span class="en">About</span></a></a>
+  <a href="/essay?page=1"><span>心情随笔</span><span class="en">Essay</span></a>
+  <a href="/time?type=All&page=1"><span>时光荏苒</span><span class="en">Time</span></a>
+  <!--<a href="weblist.html"><span>技术分享</span><span class="en">Share</span></a>-->
+  <a href="#"><span>待定</span><span class="en">other</span></a>
+  <a href="gustbook.html"><span>留言板</span><span class="en">Gustbook</span></a>
+  </nav>
+</header>
+<article class="blogs">
+  <h1 class="t_nav"><span>您当前的位置：<a href="/">首页</a>&nbsp;&gt;&nbsp;<a href="/time?type=All&page=1">时光荏苒</a>&nbsp;&gt;&nbsp;<a href="/time?type={{para.doc_type}}&page=1">{{para.doc_type}}</a></span><a href="/" class="n1">个人博客</a><a href="/time?type={{para.doc_type}}&page=1" class="n2">{{para.doc_type}}</a></h1>
+  <div class="index_about">
+    <h2 class="c_titile">{{para.title}}</h2>
+    <p class="box_c"><span class="d_time">发布时间：{{para.pub_time|date:"Y-m-d"}}</span><span>编辑：{{para.writer}}</span><span>阅读（{{article.viewed}}）</span></p>
+    <ul class="infos">
+      <!--内容-->
+         {% autoescape off %}
+             {{ article.content }}
+         {% endautoescape %}
+      <!--end-->
+      
+    </ul>
+    <div class="keybq">
+    <p><span>关键字词：</span>日常吐槽</p>
+    
+    </div>
+    <div class="ad"> </div>
+    <div class="nextinfo">
+      
+      {% autoescape off %}
+          {% for data in link %}
+          <p>    {{data}}    </p> 
+               {% endfor %}
+      {% endautoescape %}
+      
+    </div>
+    <div class="otherlink">
+      <h2>友情链接</h2>
+      <ul>
+        <li><a href="#" title="链接1">链接1</a></li>
+        <li><a href="#" title="链接2">链接2</a></li>
+        <li><a href="#" title="链接3">链接3</a></li>
+        <li><a href="#" title="链接4">链接4</a></li>
+      </ul>
+    </div>
+  </div>
+  <aside class="right">
+    <!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"><a class="bds_tsina"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more"></span><a class="shareCount"></a></div>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script> 
+    <script type="text/javascript" id="bdshell_js"></script> 
+    <script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script> 
+    <!-- Baidu Button END -->
+    <div class="blank"></div>
+    <div class="news">
+      <h3 class="ph">
+      <p>点击<span>排行</span></p>
+      </h3>
+      <ul class="paih">
+        {% for data in max_para %}
+        <li><a href="/article?id={{data.Num}}" title="{{data.title}}"> {{data.title}}</a></li>
+        {% endfor %}
+      </ul>
+      <h3>
+        <p>栏目<span>最新</span></p>
+      </h3>
+      <ul class="rank">
+        {% for data in new_para %}
+        <li><a href="/article?id={{data.Num}}" title="{{data.title}}">{{data.title}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </aside>
+</article>
+<footer>
+ <p><span>The backend designer is：<a href="www.duanliang920.com" target="_blank">晓东</a></span><span></span><span><a href="/"></a></span></p>
+</footer>
+<script src="/static/js/nav.js"></script>
+</body>
+</html>
