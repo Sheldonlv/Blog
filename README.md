@@ -5,3 +5,5 @@
 - 测试环境：ubuntu14
 
 ![博客主页](http://p79r368jm.bkt.clouddn.com/blog/BlogIndex.png)
+
+![博客介绍](http://p79r368jm.bkt.clouddn.com/blog/BlogAbout.png)
