@@ -7,7 +7,7 @@
 
 * 博客主页
 
-![博客主页](http://p79r368jm.bkt.clouddn.com/blog/BlogIndex.png)
+![博客主页](https://github.com/Sheldonlv/Blog/blob/master/static/images/001.png)
 
 
 * 博客个人介绍
